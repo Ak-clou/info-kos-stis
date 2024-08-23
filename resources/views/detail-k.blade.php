@@ -12,9 +12,6 @@
                 </div>
             </nav>
 
-            
-            
-            
             <!-- Image gallery -->
             <div class="mx-auto mt-6 max-w-2xl sm:px-6">
                 <img src="https://tailwindui.com/img/ecommerce-images/product-page-02-tertiary-product-shot-02.jpg"
@@ -82,7 +79,7 @@
                     <div>
                         <h3 class="sr-only" style="display: none">Deskripsi</h3>
 
-                        <div class="space-y-6">
+                        <div class="space-y-6 border-b border-gray-100">
                             <div>
                                 <h3 class="text-sm font-medium text-gray-900">Fasilitas</h3>
                                 <div class="flex justify-between">

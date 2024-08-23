@@ -1,10 +1,11 @@
 <?php
 
-use App\Http\Controllers\CreateController;
 use App\Models\Kost;
 use App\Models\Post;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\CreateController;
 
 Route::get('/', function () {
     return view('home', ["title" => "Homepage"]);
@@ -47,6 +48,15 @@ Route::get('/blog/{post:slug}', function (Post $post) {
     return view('post', ['title' => 'Single Post', 'post' => $post]);
 });
 
+Route::get('/login', function() {
+    return view('login', ['title'=>'Login Page']);
+});
+
+Route::get('/register', function() {
+    return view('register', ['title'=>'Login Page']);
+});
+
 Route::post('/create',[CreateController::class, 'store']);
+Route::post('/register',[UserController::class, 'store']);
 
 Route::get('/create/checkSlug',[CreateController::class,'checkSlug']);
