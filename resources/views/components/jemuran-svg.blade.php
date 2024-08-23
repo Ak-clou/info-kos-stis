@@ -1,4 +1,4 @@
-<div class="overflow-y-scroll no-scrollbar flex flex-col items-center justify-start w-full h-20 py-2">
+<x-icon {{ $attributes }}>
     <div>
         <?xml version="1.0" encoding="iso-8859-1"?>
         <!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
@@ -34,4 +34,4 @@
         </svg>
     </div>
     <span class="sm:text-base text-center text-sm text-gray-600 averia-serif-libre-regular">Jemuran</span>
-</div>
+</x-icon>

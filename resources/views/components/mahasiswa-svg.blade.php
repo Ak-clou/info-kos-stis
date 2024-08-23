@@ -1,4 +1,4 @@
-<x-icon>
+<x-icon {{ $attributes }}>
     <div class="flex flex-col  text-center items-center">
         <?xml version="1.0" encoding="utf-8"?>
         <svg class="size-6 mb-1 " viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

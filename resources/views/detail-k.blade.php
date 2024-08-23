@@ -1,10 +1,6 @@
 <x-layout>
-
-
+    
     <style>
-        .hidden {
-            display: none;
-        }
     </style>
     <div class="bg-white">
         <div class="pt-6">
@@ -16,6 +12,9 @@
                 </div>
             </nav>
 
+            
+            
+            
             <!-- Image gallery -->
             <div class="mx-auto mt-6 max-w-2xl sm:px-6">
                 <img src="https://tailwindui.com/img/ecommerce-images/product-page-02-tertiary-product-shot-02.jpg"
@@ -24,16 +23,17 @@
 
             <!-- Product info -->
             <div
-                class="mx-auto max-w-2xl px-4 pb-16 pt-10 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:grid-rows-[auto,auto,1fr] lg:gap-x-8 lg:px-8 lg:pb-24 lg:pt-16">
-                <div class="lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8">
-                    <h1 class="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">{{ $kost['nama_kos'] }}</h1>
-                    <p class="mt-1 mb-4">{{ $kost['lokasi'] }}</p>
-                </div>
-
-                <!-- Options -->
-                <div class="mt-4 lg:row-span-3 lg:mt-0">
-                    <div class="border-b border-gray-200 pb-5">
-                        <p class="text-3xl font-bold tracking-tight text-gray-900">Rp{{ $kost['harga_min'] }}-{{ $kost['harga_max'] }}</p>
+            class="mx-auto max-w-2xl px-4 pb-16 pt-10 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:grid-rows-[auto,auto,1fr] lg:gap-x-8 lg:px-8 lg:pb-24 lg:pt-16">
+            <div class="lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8">
+                <h1 class="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">{{ $kost['nama_kos'] }}</h1>
+                <p class="mt-1 mb-4">{{ $kost['lokasi'] }}</p>
+            </div>
+            
+            <!-- Options -->
+            <div class="mt-4 lg:row-span-3 lg:mt-0">
+                <div class="border-b border-gray-200 pb-5">
+                    <p class="text-3xl font-bold tracking-tight text-gray-900">
+                        Rp{{ $kost['harga_min'] }}-{{ $kost['harga_max'] }}</p>
                     </div>
                     <!-- Reviews -->
 
@@ -57,7 +57,7 @@
                         <div class="mt-10">
                             <div class="justify-between">
                                 <h3 class="text-sm font-medium text-gray-900">Pemilik</h3>
-                                <a href="https://wa.me/<?php echo $kost['telp_pemilik']?>"
+                                <a href="https://wa.me/<?php echo $kost['telp_pemilik']; ?>"
                                     class="flex justify-between mt-4 border border-gray-400 px-3 py-3 rounded-md">
                                     <div>
                                         <p class="text-2xl font-medium">{{ $kost['pemilik'] }}</p>
@@ -80,19 +80,19 @@
                 <div class="py-10 lg:col-span-2 lg:col-start-1 lg:border-r lg:border-gray-200 lg:pb-16 lg:pr-8 lg:pt-6">
                     <!-- Description and details -->
                     <div>
-                        <h3 class="sr-only">Deskripsi</h3>
+                        <h3 class="sr-only" style="display: none">Deskripsi</h3>
 
                         <div class="space-y-6">
                             <div>
                                 <h3 class="text-sm font-medium text-gray-900">Fasilitas</h3>
                                 <div class="flex justify-between">
-                                    <x-wifi-svg class="<?php echo $kost['wifi'] === 'Tersedia' ? '' : 'hidden'; ?>"></x-wifi-svg>
-                                    <x-listrik-svg class="<?php echo $kost['listrik'] === 'Tersedia' ? '' : 'hidden'; ?>"></x-listrik-svg>
-                                    <x-ac-svg class="<?php echo $kost['ac'] === 'Tersedia' ? '' : 'hidden'; ?>"></x-ac-svg>
-                                    <x-kipas-svg class="<?php echo $kost['kipas'] === 'Tersedia' ? '' : 'hidden'; ?>"></x-kipas-svg>
-                                    <x-ventilasi-svg class="<?php echo $kost['ventilasi'] === 'Tersedia' ? '' : 'hidden'; ?>"></x-ventilasi-svg>
-                                    <x-parkir-svg class="<?php echo $kost['parkir'] === 'Tersedia' ? '' : 'hidden'; ?>"></x-parkir-svg>
-                                    <x-wifi-svg class="hidden" style="display:none"></x-wifi-svg>
+                                    <x-wifi-svg style="<?php echo $kost['s_wifi'] == 'Tersedia' ? 'display:block' : 'display:none'; ?>"></x-wifi-svg>
+                                    <x-listrik-svg style="<?php echo $kost['s_listrik'] == 'Tersedia' ? 'display:block' : 'display:none'; ?>"></x-listrik-svg>
+                                    <x-ac-svg style="<?php echo $kost['s_ac'] == 'Tersedia' ? 'display:block' : 'display:none'; ?>"></x-ac-svg>
+                                    <x-kipas-svg style="<?php echo $kost['s_kipasangin'] == 'Tersedia' ? 'display:block' : 'display:none'; ?>"></x-kipas-svg>
+                                    <x-ventilasi-svg style="<?php echo $kost['s_ventilasi'] == 'Tersedia' ? 'display:block' : 'display:none'; ?>"></x-ventilasi-svg>
+                                    <x-parkir-svg style="<?php echo $kost['s_parkir'] == 'Tersedia' ? 'display:block' : 'display:none'; ?>"></x-parkir-svg>
+                                    <x-wifi-svg style="display:none"></x-wifi-svg>
                                 </div>
                             </div>
                         </div>

@@ -1,4 +1,4 @@
-<x-icon>
+<x-icon {{ $attributes }}>
     <div>
         <?xml version="1.0" encoding="utf-8"?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
         <svg fill="#000000" class="size-6 mb-1" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">

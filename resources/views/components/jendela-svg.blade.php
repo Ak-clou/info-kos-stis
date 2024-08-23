@@ -1,4 +1,4 @@
-<x-icon>
+<x-icon {{ $attributes }}>
     <div>
         <?xml version="1.0" encoding="utf-8"?>
 

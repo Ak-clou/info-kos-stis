@@ -6,7 +6,7 @@
             <div class="mt-10 flex-shrink-0 m-auto font-bold text-3xl text-gray-800">Info Kos</div>
             <div name="atas" class="flex mt-6 items-center space-x-4">
                 <!-- Info Kos tanpa kelas tambahan -->
-                
+
                 <!-- Input Field dengan sedikit penyesuaian lebar -->
                 <label x-data="{ isFocus: false }" class="h-13 flex-grow relative">
                     <input @focus="isFocus = !isFocus" @blur="isFocus = !isFocus" type="text" placeholder="Cari Kosan.."
@@ -16,17 +16,17 @@
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
                             stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M21 21l-4.35-4.35M10 18a8 8 0 100-16 8 8 0 000 16z" />
+                                d="M21 21l-4.35-4.35M10 18a8 8 0 100-16 8 8 0 000 16z" />
                         </svg>
                     </div>
                 </label>
-                
+
                 <!-- Popup -->
                 <x-filter-popup></x-filter-popup>
             </div>
-            
-            
-            
+
+
+
             <!-- Content -->
             <div class=" md:w-auto p-6 lg:mt-3 xl:mt-4">
                 <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 xl:gap-6">
@@ -39,8 +39,8 @@
                             <!-- Image slider -->
                             <div class="w-full md:w-1/2">
                                 <div class="relative h-44 md:h-auto">
-                                    <img src="https://i.pinimg.com/564x/f2/50/fe/f250fe9ddc5488fc59c32c3e5b308869.jpg" alt="Kos 1"
-                                        class="object-cover h-full w-full">
+                                    <img src="https://i.pinimg.com/564x/f2/50/fe/f250fe9ddc5488fc59c32c3e5b308869.jpg"
+                                        alt="Kos 1" class="object-cover h-full w-full">
                                 </div>
                             </div>
 
@@ -51,10 +51,12 @@
                                     <p class="hover:text-amber-950 text-sm text-gray-600 averia-serif-libre-regular">
                                         <a href="#">{{ $kost['lokasi'] }}</a>
                                     </p>
-                                    <p class="text-base text-xl font-bold text-blue-600 averia-serif-libre-bold">Rp{{ $kost['harga_min']}}-{{ $kost['harga_max'] }}<span class="text-sm font-normal">/bulan</span> </p>
+                                    <p class="text-base text-xl font-bold text-blue-600 averia-serif-libre-bold">
+                                        Rp{{ $kost['harga_min'] }}-{{ $kost['harga_max'] }}<span
+                                            class="text-sm font-normal">/bulan</span> </p>
                                 </div>
                                 <div class="my-2 md:mt-0">
-                                    <a href="/detail-kos/<?php echo $kost['slug']  ?>"
+                                    <a href="/detail-kos/<?php echo $kost['slug']; ?>"
                                         class="px-4 py-2 bg-blue-100 hover:bg-blue-200 text-blue-500 rounded-lg">Detail</a>
                                 </div>
                             </div>
