@@ -1,4 +1,4 @@
-<div class="overflow-y-scroll no-scrollbar flex flex-col items-center justify-start w-full h-20 py-2">
+<x-icon>
     <div>
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
             class="size-6 mb-1">
@@ -8,4 +8,5 @@
     </div>
     <span class="sm:text-base text-center text-sm text-gray-600 averia-serif-libre-regular">4m
         x 5m</span>
-</div>
+</x-icon>
+

@@ -1,4 +1,11 @@
 <x-layout>
+
+
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
     <div class="bg-white">
         <div class="pt-6">
             <nav aria-label="Breadcrumb" class="mx-10">
@@ -19,32 +26,30 @@
             <div
                 class="mx-auto max-w-2xl px-4 pb-16 pt-10 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:grid-rows-[auto,auto,1fr] lg:gap-x-8 lg:px-8 lg:pb-24 lg:pt-16">
                 <div class="lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8">
-                    <h1 class="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">Contoh Kos</h1>
-                    <p class="mt-1 mb-4">[Alamat Kos]</p>
+                    <h1 class="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">{{ $kost['nama_kos'] }}</h1>
+                    <p class="mt-1 mb-4">{{ $kost['lokasi'] }}</p>
                 </div>
 
                 <!-- Options -->
                 <div class="mt-4 lg:row-span-3 lg:mt-0">
-                    <h2 class="sr-only">Product information</h2>
-                    <p class="text-3xl font-bold tracking-tight text-gray-900">Rp999.000-1.199.000</p>
-
+                    <div class="border-b border-gray-200 pb-5">
+                        <p class="text-3xl font-bold tracking-tight text-gray-900">Rp{{ $kost['harga_min'] }}-{{ $kost['harga_max'] }}</p>
+                    </div>
                     <!-- Reviews -->
 
 
-                    <form class="mt-10">
+                    <form class="mt-4">
                         <!-- Colors -->
-                        <div class="mt-10">
-                            <div class="justify-between">
-                                <h3 class="text-sm font-medium text-gray-900">Batasan</h3>
-                                <a href="https://google.com"
-                                    class="flex justify-between mt-4 border border-gray-400 px-3 py-3 rounded-md">
-                                    <div>
-                                        <p class="text-2xl font-medium">Bu Ida</p>
-                                        <p class="">+62123456789</p>
-                                    </div>
-                                    <img src="https://seeklogo.com/images/W/whatsapp-logo-0DBD89C8E2-seeklogo.com.png"
-                                        class="h-10" alt="">
-                                </a>
+                        <div class="mt-4">
+                            <div class="justify-between font-medium">
+                                <h3 class="text-sm text-gray-900">Batasan</h3>
+                                <div
+                                    class="flex justify-between border border-gray-200 rounded-md mt-2 overflow-hidden">
+                                    <x-mahasiswa-svg class="flex-shrink-0"></x-mahasiswa-svg>
+                                    <x-toilet-svg class="flex-shrink-0"></x-toilet-svg>
+                                    <x-parkir-svg class="flex-shrink-0"></x-parkir-svg>
+                                </div>
+
                             </div>
                         </div>
 
@@ -52,11 +57,11 @@
                         <div class="mt-10">
                             <div class="justify-between">
                                 <h3 class="text-sm font-medium text-gray-900">Pemilik</h3>
-                                <a href="https://google.com"
+                                <a href="https://wa.me/<?php echo $kost['telp_pemilik']?>"
                                     class="flex justify-between mt-4 border border-gray-400 px-3 py-3 rounded-md">
                                     <div>
-                                        <p class="text-2xl font-medium">Bu Ida</p>
-                                        <p class="">+62123456789</p>
+                                        <p class="text-2xl font-medium">{{ $kost['pemilik'] }}</p>
+                                        <p class="">{{ $kost['telp_pemilik'] }}</p>
                                     </div>
                                     <img src="https://seeklogo.com/images/W/whatsapp-logo-0DBD89C8E2-seeklogo.com.png"
                                         class="h-10" alt="">
@@ -81,9 +86,13 @@
                             <div>
                                 <h3 class="text-sm font-medium text-gray-900">Fasilitas</h3>
                                 <div class="flex justify-between">
-                                    <x-wifi-svg></x-wifi-svg>
-                                    <x-toilet-svg></x-toilet-svg>
-                                    <x-parkir-svg></x-parkir-svg>
+                                    <x-wifi-svg class="<?php echo $kost['wifi'] === 'Tersedia' ? '' : 'hidden'; ?>"></x-wifi-svg>
+                                    <x-listrik-svg class="<?php echo $kost['listrik'] === 'Tersedia' ? '' : 'hidden'; ?>"></x-listrik-svg>
+                                    <x-ac-svg class="<?php echo $kost['ac'] === 'Tersedia' ? '' : 'hidden'; ?>"></x-ac-svg>
+                                    <x-kipas-svg class="<?php echo $kost['kipas'] === 'Tersedia' ? '' : 'hidden'; ?>"></x-kipas-svg>
+                                    <x-ventilasi-svg class="<?php echo $kost['ventilasi'] === 'Tersedia' ? '' : 'hidden'; ?>"></x-ventilasi-svg>
+                                    <x-parkir-svg class="<?php echo $kost['parkir'] === 'Tersedia' ? '' : 'hidden'; ?>"></x-parkir-svg>
+                                    <x-wifi-svg class="hidden" style="display:none"></x-wifi-svg>
                                 </div>
                             </div>
                         </div>

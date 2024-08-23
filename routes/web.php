@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CreateController;
 use App\Models\Kost;
 use App\Models\Post;
 use Illuminate\Support\Arr;
@@ -37,7 +38,15 @@ Route::get('/detail-kos', function () {
     return view('detail-k', ["title" => "Detail Kos"]);
 });
 
+Route::get('/detail-kos/{kost:slug}', function (Kost $kost) {
+    return view('detail-k', ["kost" => $kost]);
+});
+
 Route::get('/blog/{post:slug}', function (Post $post) {
 
     return view('post', ['title' => 'Single Post', 'post' => $post]);
 });
+
+Route::post('/create',[CreateController::class, 'store']);
+
+Route::get('/create/checkSlug',[CreateController::class,'checkSlug']);

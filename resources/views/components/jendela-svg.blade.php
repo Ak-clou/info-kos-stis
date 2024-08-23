@@ -1,4 +1,4 @@
-<div class="overflow-y-scroll no-scrollbar flex flex-col items-center justify-start w-full h-20 py-2">
+<x-icon>
     <div>
         <?xml version="1.0" encoding="utf-8"?>
 
@@ -29,4 +29,4 @@
         </svg>
     </div>
     <span class="sm:text-base text-center text-sm text-gray-600 averia-serif-libre-regular">Jendela</span>
-</div>
+</x-icon>

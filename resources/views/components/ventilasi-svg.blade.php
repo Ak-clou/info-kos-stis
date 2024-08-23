@@ -1,4 +1,4 @@
-<div class="overflow-y-scroll no-scrollbar flex flex-col items-center justify-start w-full h-20 py-2">
+<x-icon>
     <div>
         <?xml version="1.0" encoding="utf-8"?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
         <svg class="size-6 mb-1" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -9,4 +9,4 @@
     </div>
     <span class="sm:text-base text-center text-sm text-gray-600 averia-serif-libre-regular">Ventilasi
         udara</span>
-</div>
+</x-icon>

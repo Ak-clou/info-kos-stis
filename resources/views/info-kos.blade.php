@@ -39,7 +39,7 @@
                             <!-- Image slider -->
                             <div class="w-full md:w-1/2">
                                 <div class="relative h-44 md:h-auto">
-                                    <img src="<?php echo $kost['foto'] ?>" alt="Kos 1"
+                                    <img src="https://i.pinimg.com/564x/f2/50/fe/f250fe9ddc5488fc59c32c3e5b308869.jpg" alt="Kos 1"
                                         class="object-cover h-full w-full">
                                 </div>
                             </div>
@@ -51,12 +51,11 @@
                                     <p class="hover:text-amber-950 text-sm text-gray-600 averia-serif-libre-regular">
                                         <a href="#">{{ $kost['lokasi'] }}</a>
                                     </p>
-                                    <p class="text-base text-xl font-bold text-blue-600 averia-serif-libre-bold">Rp{{ $kost['harga']}}<span class="text-sm font-normal">/bulan</span> </p>
+                                    <p class="text-base text-xl font-bold text-blue-600 averia-serif-libre-bold">Rp{{ $kost['harga_min']}}-{{ $kost['harga_max'] }}<span class="text-sm font-normal">/bulan</span> </p>
                                 </div>
                                 <div class="my-2 md:mt-0">
-                                    <a href="/detail-kos"
-                                        class="px-4 py-2 bg-blue-100 hover:bg-blue-200 text-blue-500 rounded-lg">Lihat
-                                        Detail</a>
+                                    <a href="/detail-kos/<?php echo $kost['slug']  ?>"
+                                        class="px-4 py-2 bg-blue-100 hover:bg-blue-200 text-blue-500 rounded-lg">Detail</a>
                                 </div>
                             </div>
 

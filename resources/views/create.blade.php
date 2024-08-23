@@ -3,6 +3,7 @@
     @vite('resources/css/app.css')
     <x-slot:title>{{ $title }}</x-slot:title>
 
+
     <!--
   This example requires some changes to your config:
   
@@ -178,7 +179,7 @@
                             <div class="mt-4 space-y-2">
                                 <div class="relative flex gap-x-3">
                                     <div class="flex h-6 items-center">
-                                        <input id="comments" name="tipe_kos" type="radio"
+                                        <input id="comments" name="tipe_kos" type="radio" value="Laki-Laki"
                                             class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                     </div>
                                     <div class="text-sm leading-6">
@@ -187,7 +188,7 @@
                                 </div>
                                 <div class="relative flex gap-x-3">
                                     <div class="flex h-6 items-center">
-                                        <input id="candidates" name="tipe_kos" type="radio"
+                                        <input id="candidates" name="tipe_kos" type="radio" value="Perempuan"
                                             class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                     </div>
                                     <div class="text-sm leading-6">
@@ -196,7 +197,7 @@
                                 </div>
                                 <div class="relative flex gap-x-3">
                                     <div class="flex h-6 items-center">
-                                        <input id="candidates" name="tipe_kos" type="radio"
+                                        <input id="candidates" name="tipe_kos" type="radio" value="Campur"
                                             class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                     </div>
                                     <div class="text-sm leading-6">
@@ -350,14 +351,14 @@
                                         <label for="tv" class="text-sm font-medium text-gray-900">Kulkas</label>
                                     </div>
                                     <div class="relative flex gap-x-3 items-center">
-                                        <input id="tv" name="s_tempatjemuran" type="checkbox"
+                                        <input id="tv" name="s_jemuran" type="checkbox" value="Tersedia"
                                             value="Tersedia"
                                             class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                         <label for="tv" class="text-sm font-medium text-gray-900">Tempat
                                             Jemuran</label>
                                     </div>
                                     <div class="relative flex gap-x-3 items-center">
-                                        <input id="tv" name="s_rooftoop" type="checkbox" value="Tersedia"
+                                        <input id="tv" name="s_rooftop" type="checkbox" value="Tersedia"
                                             class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                         <label for="tv"
                                             class="text-sm font-medium text-gray-900">Rooftop</label>

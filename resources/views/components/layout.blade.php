@@ -18,7 +18,7 @@
   <body class="h-full">
   ```
 -->
-    <div class="h-full">
+    <div class="h-full ">
         <x-navbar></x-navbar>
         <main>
             <div class="mx-10">
