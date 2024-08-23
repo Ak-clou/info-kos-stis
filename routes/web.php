@@ -41,3 +41,8 @@ Route::get('/blog/{post:slug}', function (Post $post) {
 
     return view('post', ['title' => 'Single Post', 'post' => $post]);
 });
+
+Route::get('/login', function () {
+    return view('login', ['title' => 'Halaman Login']);
+});
+
