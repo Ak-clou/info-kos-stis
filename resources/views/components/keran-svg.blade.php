@@ -10,7 +10,5 @@
                 stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
         </svg>
     </div>
-    <span class="sm:text-base text-center text-sm text-gray-600 averia-serif-libre-regular">Air
-        keran<br>
-        gratis</span>
+    <span class="sm:text-base text-center text-sm text-gray-600 averia-serif-libre-regular">Air keran<br> gratis</span>
 </div>

@@ -17,23 +17,37 @@
   }
   ```
 -->
+
     <div class="border-b border-gray-300 pb-5">
         <div class="text-center mt-10 flex-shrink-0 m-auto font-bold text-3xl text-gray-800">Form Menambahkan Info Kos
         </div>
     </div>
-    <form>
+    <form method="POST" action="/create" class="lg:mx-20">
+        @csrf
         <div class="space-y-4">
             <div class="pb-12">
                 <div class="mt-3 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
                     <div class="sm:col-span-6 border-b border-gray-300 pb-6">
                         <p class="text-2xl font-bold">General</p>
                         <div class="sm:col-span-4 my-4">
-                            <label for="nama-kos" class="block text-sm font-medium leading-6 text-gray-900">Nama
+                            <label for="nama_kos" class="block text-sm font-medium leading-6 text-gray-900">Nama
                                 Kos</label>
                             <div class="mt-2">
                                 <div
                                     class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
-                                    <input type="text" name="nama-kos" id="nama-kos"
+                                    <input type="text" name="nama_kos" id="nama_kos"
+                                        class="pl-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                        placeholder="">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="hidden sm:col-span-4 my-4">
+                            <label for="nama_kos" class="block text-sm font-medium leading-6 text-gray-900">Slug</label>
+                            <div class="mt-2">
+                                <div
+                                    class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
+                                    <input type="text" name="slug" id="slug"
                                         class="pl-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                                         placeholder="">
                                 </div>
@@ -41,12 +55,12 @@
                         </div>
 
                         <div class="sm:col-span-4 my-4">
-                            <label for="nama-pemilik" class="block text-sm font-medium leading-6 text-gray-900">Nama
+                            <label for="pemilik" class="block text-sm font-medium leading-6 text-gray-900">Nama
                                 Pemilik</label>
                             <div class="mt-2">
                                 <div
                                     class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
-                                    <input type="text" name="nama-pemilik" id="nama-pemilik"
+                                    <input type="text" name="pemilik"
                                         class="pl-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                                         placeholder="">
                                 </div>
@@ -59,7 +73,20 @@
                             <div class="mt-2">
                                 <div
                                     class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
-                                    <input type="text" name="nama-pemilik" id="nama-pemilik"
+                                    <input type="text" name="telp_pemilik" id="telp_pemilik"
+                                        class="pl-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                        placeholder="">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="sm:col-span-4 my-4">
+                            <label for="kamar_kosong" class="block text-sm font-medium leading-6 text-gray-900">Kamar
+                                kosong tersedia</label>
+                            <div class="mt-2">
+                                <div
+                                    class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
+                                    <input type="text" name="kamar_kosong" id="kamar_kosong" value="100"
                                         class="pl-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                                         placeholder="">
                                 </div>
@@ -68,13 +95,12 @@
 
                         <div class="sm:col-span-6 flex">
                             <div class="flex-1">
-                                <label for="telp_pemilik"
-                                    class="block text-sm font-medium leading-6 text-gray-900">Alamat
+                                <label for="lokasi" class="block text-sm font-medium leading-6 text-gray-900">Alamat
                                     Kos</label>
                                 <div class="mt-2">
                                     <div
                                         class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
-                                        <input type="text" name="nama-pemilik" id="nama-pemilik"
+                                        <input type="text" name="lokasi"
                                             class="pl-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                                             placeholder="">
                                     </div>
@@ -95,23 +121,23 @@
 
                         <div class="sm:col-span-6 flex mt-4">
                             <div class="flex-1">
-                                <label for="telp_pemilik"
-                                    class="block text-sm font-medium leading-6 text-gray-900">Harga Kamar (Per
-                                    Bulan)</label>
+                                <label for="harga" class="block text-sm font-medium leading-6 text-gray-900">Harga
+                                    Kamar (PerBulan)</label>
                                 <div class="mt-2">
-                                    <div
-                                        class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
-                                        <input type="text" name="nama-pemilik" id="nama-pemilik"
-                                            class="pl-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                    <div class="flex rounded-md sm:max-w-md">
+                                        <input type="text" name="harga_min" placeholder="Harga minimal"
+                                            class="pl-2 mr-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                        <input type="text" name="harga_max" placeholder="Harga maksimal"
+                                            class="pl-2 ml-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                                     </div>
                                 </div>
                             </div>
 
                             <div class="flex-1">
-                                <label for="country" class="block text-sm font-medium leading-6 text-gray-900">Tipe
+                                <label for="tipe_bayar" class="block text-sm font-medium leading-6 text-gray-900">Tipe
                                     Pembayaran</label>
                                 <div class="mt-2">
-                                    <select id="country" name="country" autocomplete="country-name"
+                                    <select name="tipe_bayar"
                                         class="pl-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
                                         <option>Bulanan</option>
                                         <option>Tahunan</option>
@@ -128,16 +154,18 @@
                             <div class="mt-4 flex space-x-8">
                                 <!-- Pilihan 1 -->
                                 <div class="flex items-center">
-                                    <input id="muslim-saja" name="agama" type="radio"
+                                    <input id="muslim-saja" name="batasan_agama" type="radio" value="Muslim saja"
                                         class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                     <label for="muslim-saja" class="ml-2 text-sm leading-6 text-gray-900">Muslim
                                         saja</label>
                                 </div>
                                 <!-- Pilihan 2 -->
                                 <div class="flex items-center">
-                                    <input id="semua-agama" name="agama" type="radio"
+                                    <input id="semua-agama" name="batasan_agama" type="radio"
+                                        value="Untuk semua agama"
                                         class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
-                                    <label for="semua-agama" class="ml-2 text-sm leading-6 text-gray-900">Diperbolehkan
+                                    <label for="semua-agama"
+                                        class="ml-2 text-sm leading-6 text-gray-900">Diperbolehkan
                                         untuk
                                         semua
                                         agama</label>
@@ -150,20 +178,29 @@
                             <div class="mt-4 space-y-2">
                                 <div class="relative flex gap-x-3">
                                     <div class="flex h-6 items-center">
-                                        <input id="comments" name="comments" type="checkbox"
+                                        <input id="comments" name="tipe_kos" type="radio"
                                             class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                     </div>
                                     <div class="text-sm leading-6">
-                                        <label for="comments" class=" text-gray-900">Laki-Laki</label>
+                                        <label class=" text-gray-900">Laki-Laki</label>
                                     </div>
                                 </div>
                                 <div class="relative flex gap-x-3">
                                     <div class="flex h-6 items-center">
-                                        <input id="candidates" name="candidates" type="checkbox"
+                                        <input id="candidates" name="tipe_kos" type="radio"
                                             class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                     </div>
                                     <div class="text-sm leading-6">
-                                        <label for="candidates" class=" text-gray-900">Perempuan</label>
+                                        <label class=" text-gray-900">Perempuan</label>
+                                    </div>
+                                </div>
+                                <div class="relative flex gap-x-3">
+                                    <div class="flex h-6 items-center">
+                                        <input id="candidates" name="tipe_kos" type="radio"
+                                            class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                    </div>
+                                    <div class="text-sm leading-6">
+                                        <label for="candidates" class=" text-gray-900">Campur</label>
                                     </div>
                                 </div>
                             </div>
@@ -175,15 +212,16 @@
                             <div class="mt-4 flex space-x-8">
                                 <!-- Pilihan 1 -->
                                 <div class="flex items-center">
-                                    <input id="muslim-saja" name="" type="radio"
+                                    <input id="umum" name="batasan_mahasiswa" type="radio" value="umum"
                                         class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
-                                    <label for="muslim-saja" class="ml-2 text-sm leading-6 text-gray-900">Umum</label>
+                                    <label for="umum" class="ml-2 text-sm leading-6 text-gray-900">Umum</label>
                                 </div>
                                 <!-- Pilihan 2 -->
                                 <div class="flex items-center">
-                                    <input id="semua-agama" name="" type="radio"
+                                    <input id="" name="batasan_mahasiswa" type="radio"
+                                        value="Khusus Mahasiswa STIS"
                                         class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
-                                    <label for="semua-agama" class="ml-2 text-sm leading-6 text-gray-900">Khusus
+                                    <label for="khusus-stis" class="ml-2 text-sm leading-6 text-gray-900">Khusus
                                         mahasiswa Polstat STIS</label>
                                 </div>
                             </div>
@@ -193,14 +231,14 @@
                     <div class="sm:col-span-6 border-b border-gray-300 pb-6">
                         <p class="text-2xl font-bold">Detail Kamar</p>
                         <div class="sm:col-span-4 mt-4">
-                            <label for="nama-pemilik" class="block text-sm font-medium leading-6 text-gray-900">Luas
+                            <label for="luas" class="block text-sm font-medium leading-6 text-gray-900">Luas
                                 Kamar</label>
                             <div class="mt-2">
                                 <div class="flex rounded-md sm:max-w-md">
-                                    <input type="text" name="nama-pemilik" placeholder="Panjang"
-                                        id="nama-pemilik"class="pl-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-200 sm:text-sm sm:leading-6">
-                                    <input type="text" name="nama-pemilik" placeholder="Lebar"
-                                        id="nama-pemilik"class="ml-2 pl-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-200 sm:text-sm sm:leading-6">
+                                    <input type="number" name="panjang" placeholder="Panjang"
+                                        class="pl-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-200 sm:text-sm sm:leading-6">
+                                    <input type="number" name="lebar" placeholder="Lebar"
+                                        class="ml-2 pl-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-200 sm:text-sm sm:leading-6">
                                 </div>
                             </div>
                         </div>
@@ -209,13 +247,12 @@
 
                         <div class="sm:col-span-6 flex mt-4">
                             <div class="flex-1">
-                                <label for="telp_pemilik"
-                                    class="block text-sm font-medium leading-6 text-gray-900">Besar
+                                <label for="listrik" class="block text-sm font-medium leading-6 text-gray-900">Besar
                                     daya listrik (VA / Watt)</label>
                                 <div class="mt-2">
                                     <div
                                         class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
-                                        <input type="text" name="nama-pemilik" id="nama-pemilik"
+                                        <input type="text" name="watt_listrik"
                                             class="pl-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                                             placeholder="">
                                     </div>
@@ -226,7 +263,7 @@
                                 <label for="country" class="block text-sm font-medium leading-6 text-gray-900">Tipe
                                     Pembayaran</label>
                                 <div class="mt-2">
-                                    <select id="country" name="country" autocomplete="country-name"
+                                    <select id="country" name="s_listrik" autocomplete="country-name"
                                         class="pl-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
                                         <option>Sudah termasuk biaya kos</option>
                                         <option>Di luar biaya kos</option>
@@ -241,83 +278,100 @@
                             <div class="mt-4 flex space-x-8">
                                 <!-- Pilihan 1 -->
                                 <div class="flex items-center">
-                                    <input id="muslim-saja" name="agama" type="radio"
+                                    <input name="s_kamar_mandi" type="radio" value="Dalam"
                                         class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
-                                    <label for="muslim-saja"
-                                        class="ml-2 text-sm font-medium leading-6 text-gray-900">Dalam</label>
+                                    <label class="ml-2 text-sm font-medium leading-6 text-gray-900">Dalam</label>
                                 </div>
                                 <!-- Pilihan 2 -->
                                 <div class="flex items-center">
-                                    <input id="semua-agama" name="agama" type="radio"
+                                    <input name="s_kamar_mandi" type="radio" value="Luar"
                                         class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
-                                    <label for="semua-agama"
-                                        class="ml-2 text-sm font-medium leading-6 text-gray-900">Luar</label>
+                                    <label class="ml-2 text-sm font-medium leading-6 text-gray-900">Luar</label>
                                 </div>
                             </div>
                         </div>
 
                         <div class="space-y-6 mt-4">
                             <!-- Grup Pendingin -->
-                            <div>
-                                <legend class="text-sm font-semibold leading-6 text-gray-900">Pendingin</legend>
-                                <div class="mt-2 space-y-6">
-                                    <div class="relative flex gap-x-3 items-center">
-                                        <input id="ac" name="pendingin" type="checkbox"
-                                            class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
-                                        <label for="ac" class="text-sm font-medium text-gray-900">AC</label>
-                                    </div>
-                                    <div class="relative flex gap-x-3 items-center">
-                                        <input id="kipas" name="pendingin" type="checkbox"
-                                            class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
-                                        <label for="kipas" class="text-sm font-medium text-gray-900">Kipas
-                                            angin</label>
-                                    </div>
-                                </div>
-                            </div>
+
 
                             <!-- Grup Fasilitas Tambahan -->
                             <div>
                                 <legend class="text-sm font-semibold leading-6 text-gray-900">Fasilitas Tambahan
                                 </legend>
                                 <div class="mt-2 space-y-2">
+                                    <div class="mt-2 space-y-2">
+                                        <input id="ac" name="s_ac" type="checkbox" value="Tersedia"
+                                            class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                        <label for="ac" class="text-sm font-medium text-gray-900">AC</label>
+                                    </div>
                                     <div class="relative flex gap-x-3 items-center">
-                                        <input id="wifi" name="fasilitas" type="checkbox"
+                                        <input id="kipas" name="s_kipasangin" type="checkbox" value="Tersedia"
+                                            class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                        <label for="kipas" class="text-sm font-medium text-gray-900">Kipas
+                                            angin</label>
+                                    </div>
+                                    <div class="relative flex gap-x-3 items-center">
+                                        <input id="wifi" name="s_kasur" type="checkbox" value="Tersedia"
                                             class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                         <label for="wifi" class="text-sm font-medium text-gray-900">Kasur</label>
                                     </div>
                                     <div class="relative flex gap-x-3 items-center">
-                                        <input id="wifi" name="fasilitas" type="checkbox"
+                                        <input id="wifi" name="s_mejabelajar" type="checkbox" value="Tersedia"
                                             class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                         <label for="wifi" class="text-sm font-medium text-gray-900">Meja
                                             belajar</label>
                                     </div>
                                     <div class="relative flex gap-x-3 items-center">
-                                        <input id="wifi" name="fasilitas" type="checkbox"
+                                        <input id="wifi" name="s_wifi" type="checkbox" value="Tersedia"
                                             class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                         <label for="wifi" class="text-sm font-medium text-gray-900">Wi-Fi</label>
                                     </div>
                                     <div class="relative flex gap-x-3 items-center">
-                                        <input id="wifi" name="fasilitas" type="checkbox"
+                                        <input id="wifi" name="s_parkir" type="checkbox" value="Tersedia"
                                             class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                         <label for="wifi" class="text-sm font-medium text-gray-900">Parkiran
                                             motor</label>
                                     </div>
                                     <div class="relative flex gap-x-3 items-center">
-                                        <input id="tv" name="fasilitas" type="checkbox"
+                                        <input id="tv" name="s_dapur" type="checkbox" value="Tersedia"
                                             class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                         <label for="tv" class="text-sm font-medium text-gray-900">Dapur
                                             bersama</label>
                                     </div>
                                     <div class="relative flex gap-x-3 items-center">
-                                        <input id="tv" name="fasilitas" type="checkbox"
+                                        <input id="tv" name="s_lemari" type="checkbox" value="Tersedia"
+                                            class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                        <label for="tv" class="text-sm font-medium text-gray-900">Lemari</label>
+                                    </div>
+                                    <div class="relative flex gap-x-3 items-center">
+                                        <input id="tv" name="s_kulkas" type="checkbox" value="Tersedia"
                                             class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                         <label for="tv" class="text-sm font-medium text-gray-900">Kulkas</label>
                                     </div>
                                     <div class="relative flex gap-x-3 items-center">
-                                        <input id="tv" name="fasilitas" type="checkbox"
+                                        <input id="tv" name="s_tempatjemuran" type="checkbox"
+                                            value="Tersedia"
+                                            class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                        <label for="tv" class="text-sm font-medium text-gray-900">Tempat
+                                            Jemuran</label>
+                                    </div>
+                                    <div class="relative flex gap-x-3 items-center">
+                                        <input id="tv" name="s_rooftoop" type="checkbox" value="Tersedia"
+                                            class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                        <label for="tv"
+                                            class="text-sm font-medium text-gray-900">Rooftop</label>
+                                    </div>
+                                    <div class="relative flex gap-x-3 items-center">
+                                        <input id="tv" name="s_mesincuci" type="checkbox" value="Tersedia"
                                             class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                         <label for="tv" class="text-sm font-medium text-gray-900">Mesin
                                             cuci</label>
+                                    </div>
+                                    <div class="relative flex gap-x-3 items-center">
+                                        <input id="tv" name="s_ventilasi" type="checkbox" value="Tersedia"
+                                            class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                        <label for="tv" class="text-sm font-medium text-gray-900">Ventilasi</label>
                                     </div>
                                 </div>
                             </div>
@@ -328,7 +382,7 @@
                             <label for="about" class="block text-sm font-medium leading-6 text-gray-900">Keterangan
                                 Tambahan</label>
                             <div class="mt-2">
-                                <textarea id="about" name="about" rows="3"
+                                <textarea id="about" name="deskripsi" rows="3"
                                     class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"></textarea>
                             </div>
                             <p class="mt-3 text-sm leading-6 text-gray-600">Write a few sentences about yourself.</p>
@@ -351,7 +405,7 @@
                                     <label for="file-upload"
                                         class="relative cursor-pointer rounded-md bg-white font-semibold text-indigo-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-600 focus-within:ring-offset-2 hover:text-indigo-500">
                                         <span>Upload a file</span>
-                                        <input id="file-upload" name="file-upload" type="file" class="sr-only">
+                                        <input id="file-upload" name="foto" type="file" class="sr-only">
                                     </label>
                                     <p class="pl-1">or drag and drop</p>
                                 </div>
@@ -361,6 +415,32 @@
                     </div>
                 </div>
             </div>
+
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    const nama_kos = document.querySelector('#nama_kos');
+                    const slug = document.querySelector('#slug');
+
+                    if (nama_kos) {
+                        nama_kos.addEventListener('input', function() {
+                            console.log('Input value:', nama_kos.value); // Menampilkan nilai input
+                            fetch(`/create/checkSlug?nama_kos=${encodeURIComponent(nama_kos.value)}`)
+                                .then(response => response.json())
+                                .then(data => {
+                                    console.log('Received data:', data); // Menampilkan data dari server
+                                    if (slug) {
+                                        slug.value = data.slug;
+                                    } else {
+                                        console.error('Slug input not found');
+                                    }
+                                })
+                                .catch(error => console.error('Error:', error));
+                        });
+                    } else {
+                        console.error('Nama kos input not found');
+                    }
+                });
+            </script>
 
 
 
